@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 5.3//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+    <class name = "com.i2i.cinemax.model.BookingMovie" table = "booking">
+
+    <meta attribute = "class-description">
+        This class contain the Booking  detail
+    </meta>
+
+    <id name = "bookingId" column = "booking_id" type = "string" length="25">  
+     <generator class = "assigned">    </generator>
+    </id>  
+
+    <many-to-one name = "user" class = "com.i2i.cinemax.model.User"> 
+        <column name = "user_id" not-null = "true" />
+    </many-to-one>
+    
+    <many-to-one name = "theatre" class = "com.i2i.cinemax.model.Theatre"> 
+        <column name = "theatre_id"  not-null = "true" />
+    </many-to-one>
+    
+    <many-to-one name = "movie" class = "com.i2i.cinemax.model.Movie"> 
+        <column name = "movie_id"  not-null = "true" />
+    </many-to-one>
+    
+   
+    
+    
+    
+    
+    
+    </class>
+</hibernate-mapping>

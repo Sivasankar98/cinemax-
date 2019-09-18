@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 5.3//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+    <class name = "com.i2i.cinemax.model.Movie" table = "movie">
+
+    <meta attribute = "class-description">
+        This class contain the Movie detail
+    </meta>
+
+    <id name = "movieId" column = "movie_id" type = "string" length="25">  
+     <generator class="assigned">    </generator>
+    </id>  
+
+    <property name = "movieName" column = "movie_name" type = "string"  not-null="true" length="25"/>
+   
+    <property name = "showDate" column = "release_date" type = "string"  not-null="true" length="25"/>
+   
+    <property name = "language" column = "language" type = "string" not-null="true" length="25"/>
+    
+    <property name = "directorName" column = "director_name" type = "string"  not-null="true" length="25"/>
+   
+    <property name = "status" column = "status" type = "boolean" not-null="true"/>
+    
+    <set name="theatres" table="theatre_Movie"  lazy="false" cascade = "all" >
+            <key>
+                <column name="movie_id"/>
+            </key>
+            <many-to-many class = "com.i2i.cinemax.model.Theatre">
+                <column name="theatre_id"/>
+            </many-to-many>
+        </set>
+    
+     <set name = "bookings" table = "booking" lazy = "false" cascade = "all">
+        <key column = "movie_id"/>
+        <one-to-many class = "com.i2i.cinemax.model.BookingMovie"/>
+    </set>
+    </class>
+</hibernate-mapping>

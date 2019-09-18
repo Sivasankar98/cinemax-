@@ -1,0 +1,47 @@
+.button {
+  background-color:#333;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  float: left;
+}
+body {margin-top:70px;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar button:hover {
+  background: #ddd;
+  color: black;
+}
+
+.navbar button[value=Logout]:hover {
+  background: red;
+  color: black;
+}
+.navbar button[value=Logout] {
+  float: left;
+  background-color: #333;
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  position: fixed;
+  right: 10px;
+  cursor: pointer;
+  margin: 1px 1px;
+  font-family: Tahoma;
+}

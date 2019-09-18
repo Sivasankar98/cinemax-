@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 5.3//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">
+<hibernate-configuration>
+   <session-factory>
+       
+      <property name="hbm2ddl.auto">
+         update
+      </property>  
+
+      <property name = "connection.driver_class">
+         com.mysql.jdbc.Driver
+      </property>
+      
+      <!-- Assume test is the database name -->
+      
+      <property name = "connection.url">
+         jdbc:mysql://localhost:3306/cinemax?useSSl = false
+      </property>
+      
+      <property name = "connection.username">
+         root
+      </property>
+      
+      <property name = "connection.password">
+         i2iubuntu
+      </property>
+      
+      <!-- List of XML mapping files -->
+      
+      <mapping resource = "User.hbm.xml"/>
+      <mapping resource = "Address.hbm.xml"/>
+      <mapping resource = "Theatre.hbm.xml"></mapping>
+      <mapping resource = "Movie.hbm.xml"/>
+      <mapping resource = "BookingMovie.hbm.xml"/>
+      
+   </session-factory>
+</hibernate-configuration>
